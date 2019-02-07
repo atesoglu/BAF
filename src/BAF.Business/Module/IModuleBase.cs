@@ -2,9 +2,9 @@ using BAF.Model.Actor;
 using BAF.Model.Data;
 using BAF.Model.Response;
 
-namespace BAF.Business.Service
+namespace BAF.Business.Module
 {
-    public interface IServiceBase<TObjectModel, TIdType>
+    public interface IModuleBase<TObjectModel, TIdType>
         where TObjectModel : ObjectModelBaseOfT<TIdType>
     {
         IResponseModelOfT<TObjectModel, TIdType> Get(TIdType id, IActorModel actorModel);

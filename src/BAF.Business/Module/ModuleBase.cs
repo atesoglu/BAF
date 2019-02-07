@@ -3,9 +3,9 @@ using BAF.Model.Actor;
 using BAF.Model.Data;
 using BAF.Model.Response;
 
-namespace BAF.Business.Service
+namespace BAF.Business.Module
 {
-    public abstract class ServiceBase<TObjectModel, TIdType, TIStore> : IServiceBase<TObjectModel, TIdType>
+    public abstract class ModuleBase<TObjectModel, TIdType, TIStore> : IModuleBase<TObjectModel, TIdType>
     where TObjectModel : ObjectModelBaseOfT<TIdType>, new()
     where TIStore : class, IStoreBase<TObjectModel, TIdType>
     {
