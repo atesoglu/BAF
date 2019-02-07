@@ -1,15 +1,13 @@
+using BAF.Service.Core.Ioc;
 using SimpleInjector;
 
-namespace BAF.Ioc
+namespace BAF.Service.SimpleInjector.Implementation
 {
-    public class BAFIoc : IBAFIoc
+    public class SimpleInjectorContainer : IBAFIoc
     {
-        private static readonly Container SimpleInjectorContainer = new Container();
+        private static readonly Container Container = new Container();
 
-        public void Register<TService, TImplementation>(Lifetimes lifetime)
-            where TService : class
-            where TImplementation : class, TService
-
+        public void Register<TService, TImplementation>(Lifetimes lifetime) where TService : class where TImplementation : class, TService
         {
             Lifestyle lifestyle;
             switch (lifetime)
@@ -36,12 +34,12 @@ namespace BAF.Ioc
                 }
             }
 
-            SimpleInjectorContainer.Register<TService, TImplementation>(lifestyle);
+            Container.Register<TService, TImplementation>(lifestyle);
         }
 
         public TService Resolve<TService>() where TService : class
         {
-            return SimpleInjectorContainer.GetInstance<TService>();
+            return Container.GetInstance<TService>();
         }
     }
 }

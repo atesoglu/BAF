@@ -1,4 +1,4 @@
-using BAF.Ioc;
+using BAF.Service.Core.Ioc;
 
 namespace BAF
 {

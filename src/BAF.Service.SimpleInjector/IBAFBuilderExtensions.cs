@@ -1,5 +1,5 @@
 ﻿using System;
-using BAF.Ioc;
+using BAF.Service.SimpleInjector.Implementation;
 
 namespace BAF.Service.SimpleInjector
 {
@@ -7,7 +7,8 @@ namespace BAF.Service.SimpleInjector
     {
         public static IBAFBuilder AddSimpleInjector(this IBAFBuilder bafBuilder)
         {
-            //bafBuilder.App.Ioc = new BAFIoc();
+            var builder = (BAFBuilder) bafBuilder;
+            builder.SetIoc(new SimpleInjectorContainer());
             
             return bafBuilder;
         }

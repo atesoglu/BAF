@@ -7,9 +7,9 @@ using BAF.Model.Actor;
 using BAF.Model.Data;
 using Microsoft.EntityFrameworkCore;
 
-namespace BAF.Service.EFCore.Store
+namespace BAF.Data.EFCore.Store
 {
-    public class EFStore<TDbContext, TObjectModel, TDomainModel> : StoreBase<TObjectModel, TDomainModel>, IEFStore<TDbContext, TObjectModel, TDomainModel>
+    public class EFStore<TDbContext, TObjectModel, TDomainModel> : StoreBase<TObjectModel, TDomainModel>, IEFStore<TObjectModel, TDomainModel>
         where TDbContext : DbContext, new()
         where TObjectModel : ObjectModelBase, new()
         where TDomainModel : DomainModelBase, new()

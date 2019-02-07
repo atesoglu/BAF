@@ -19,7 +19,6 @@
       <ProjectReference Include="..\BAF.Service.SimpleInjector\BAF.Service.SimpleInjector.csproj" />
       <ProjectReference Include="..\BAF\BAF.csproj" />
       <ProjectReference Include="..\BAF.Business\BAF.Business.csproj" />
-      <ProjectReference Include="..\BAF.Core\BAF.Core.csproj" />
       <ProjectReference Include="..\BAF.Data\BAF.Data.csproj" />
       <ProjectReference Include="..\BAF.Exceptions\BAF.Exceptions.csproj" />
       <ProjectReference Include="..\BAF.Extensions\BAF.Extensions.csproj" />

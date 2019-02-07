@@ -1,7 +1,4 @@
-using System;
-using System.Runtime.InteropServices;
-
-namespace BAF.Ioc
+namespace BAF.Service.Core.Ioc
 {
     public interface IBAFIoc
     {

@@ -3,12 +3,10 @@ using System.Collections.Generic;
 using System.Linq.Expressions;
 using BAF.Data.Store;
 using BAF.Model.Data;
-using Microsoft.EntityFrameworkCore;
 
-namespace BAF.Service.EFCore.Store
+namespace BAF.Data.EFCore.Store
 {
-    public interface IEFStore<TDbContext, TObjectModel, TDomainModel> : IStoreBase<TObjectModel>
-        where TDbContext : DbContext, new()
+    public interface IEFStore<TObjectModel, TDomainModel> : IStoreBase<TObjectModel> 
         where TObjectModel : ObjectModelBase, new()
         where TDomainModel : DomainModelBase, new()
     {

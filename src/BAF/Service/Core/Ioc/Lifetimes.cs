@@ -1,4 +1,4 @@
-namespace BAF.Ioc
+namespace BAF.Service.Core.Ioc
 {
     public enum Lifetimes
     {
