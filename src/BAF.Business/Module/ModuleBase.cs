@@ -5,17 +5,19 @@ using BAF.Model.Response;
 
 namespace BAF.Business.Module
 {
-    public abstract class ModuleBase<TObjectModel, TIdType, TIStore> : IModuleBase<TObjectModel, TIdType>
-    where TObjectModel : ObjectModelBaseOfT<TIdType>, new()
-    where TIStore : class, IStoreBase<TObjectModel, TIdType>
+    public abstract class ModuleBase<TObjectModel, TIStore> : IModuleBase<TObjectModel>
+        where TObjectModel : ObjectModelBase, new()
+        where TIStore : class, IStoreBase<TObjectModel>
     {
-        public abstract IResponseModelOfT<TObjectModel, TIdType> Get(TIdType id, IActorModel actorModel);
-        public abstract IResponseModelOfT<TObjectModel, TIdType> Add(TObjectModel objectModel, IActorModel actorModel);
-        public abstract IResponseModelOfT<TObjectModel, TIdType> Update(TObjectModel objectModel, IActorModel actorModel);
-        public IResponseModelOfT<TObjectModel, TIdType> Remove(TIdType id, IActorModel actorModel)
+        public abstract IResponseModelOfT<TObjectModel> Get(int id, IActorModel actorModel);
+        public abstract IResponseModelOfT<TObjectModel> Add(TObjectModel objectModel, IActorModel actorModel);
+        public abstract IResponseModelOfT<TObjectModel> Update(TObjectModel objectModel, IActorModel actorModel);
+
+        public IResponseModelOfT<TObjectModel> Remove(int id, IActorModel actorModel)
         {
             return Remove(Get(id, actorModel).Data, actorModel);
         }
-        public abstract IResponseModelOfT<TObjectModel, TIdType> Remove(TObjectModel objectModel, IActorModel actorModel);
+
+        public abstract IResponseModelOfT<TObjectModel> Remove(TObjectModel objectModel, IActorModel actorModel);
     }
 }

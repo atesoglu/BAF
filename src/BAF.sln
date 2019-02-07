@@ -43,6 +43,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BAF.Service.Serilog", "BAF.
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BAF.Service.SimpleInjector", "BAF.Service.SimpleInjector\BAF.Service.SimpleInjector.csproj", "{EFE81A3D-E4BA-426C-ACF4-5A7360CDE15B}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BAF.Service.EFCore", "BAF.Service.EFCore\BAF.Service.EFCore.csproj", "{F9B835BE-312B-417C-9A27-A311D840D364}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Default|Any CPU = Default|Any CPU
@@ -86,6 +88,8 @@ Global
 		{CCC0D151-8700-46CF-B3E8-F3CA5DC043A5}.Default|Any CPU.Build.0 = Debug|Any CPU
 		{EFE81A3D-E4BA-426C-ACF4-5A7360CDE15B}.Default|Any CPU.ActiveCfg = Debug|Any CPU
 		{EFE81A3D-E4BA-426C-ACF4-5A7360CDE15B}.Default|Any CPU.Build.0 = Debug|Any CPU
+		{F9B835BE-312B-417C-9A27-A311D840D364}.Default|Any CPU.ActiveCfg = Debug|Any CPU
+		{F9B835BE-312B-417C-9A27-A311D840D364}.Default|Any CPU.Build.0 = Debug|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -104,5 +108,6 @@ Global
 		{1889DB35-4D54-4DD4-80C9-0152F9729A28} = {8D28921B-C538-49B1-8614-524F30394B71}
 		{CCC0D151-8700-46CF-B3E8-F3CA5DC043A5} = {8D28921B-C538-49B1-8614-524F30394B71}
 		{EFE81A3D-E4BA-426C-ACF4-5A7360CDE15B} = {8D28921B-C538-49B1-8614-524F30394B71}
+		{F9B835BE-312B-417C-9A27-A311D840D364} = {8D28921B-C538-49B1-8614-524F30394B71}
 	EndGlobalSection
 EndGlobal

@@ -6,6 +6,17 @@
     </PropertyGroup>
 
     <ItemGroup>
+      <ProjectReference Include="..\BAF.Api\BAF.Api.csproj" />
+      <ProjectReference Include="..\BAF.Service.AgileMapper\BAF.Service.AgileMapper.csproj" />
+      <ProjectReference Include="..\BAF.Service.AmazonMQ\BAF.Service.AmazonMQ.csproj" />
+      <ProjectReference Include="..\BAF.Service.AutoMapper\BAF.Service.AutoMapper.csproj" />
+      <ProjectReference Include="..\BAF.Service.DbUp\BAF.Service.DbUp.csproj" />
+      <ProjectReference Include="..\BAF.Service.Mapster\BAF.Service.Mapster.csproj" />
+      <ProjectReference Include="..\BAF.Service.MemoryCache\BAF.Service.MemoryCache.csproj" />
+      <ProjectReference Include="..\BAF.Service.RabbitMQ\BAF.Service.RabbitMQ.csproj" />
+      <ProjectReference Include="..\BAF.Service.Redis\BAF.Service.Redis.csproj" />
+      <ProjectReference Include="..\BAF.Service.Serilog\BAF.Service.Serilog.csproj" />
+      <ProjectReference Include="..\BAF.Service.SimpleInjector\BAF.Service.SimpleInjector.csproj" />
       <ProjectReference Include="..\BAF\BAF.csproj" />
       <ProjectReference Include="..\BAF.Business\BAF.Business.csproj" />
       <ProjectReference Include="..\BAF.Core\BAF.Core.csproj" />

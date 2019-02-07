@@ -4,17 +4,16 @@ using BAF.Model.Data;
 
 namespace BAF.Data.Store
 {
-    public abstract class StoreBase<TObjectModel, TDomainModel, TIdType> : IStoreBase<TObjectModel, TIdType>
-        where TObjectModel : ObjectModelBaseOfT<TIdType>, new()
-        where TDomainModel : DomainModelBaseOfT<TIdType>, new()
-        where TIdType : struct
+    public abstract class StoreBase<TObjectModel, TDomainModel> : IStoreBase<TObjectModel>
+        where TObjectModel : ObjectModelBase, new()
+        where TDomainModel : DomainModelBase, new()
     {
-        public abstract TObjectModel Get(TIdType id);
-        public abstract TObjectModel Get(ICollection<TIdType> ids);
+        public abstract TObjectModel Get(int id);
+        public abstract TObjectModel Get(ICollection<int> ids);
 
         public abstract TObjectModel Add(TObjectModel objectModel, IActorModel actor);
         public abstract TObjectModel Update(TObjectModel objectModel, IActorModel actor);
-        public TObjectModel Remove(TIdType id, IActorModel actor)
+        public TObjectModel Remove(int id, IActorModel actor)
         {
             return Remove(Get(id), actor);
         }

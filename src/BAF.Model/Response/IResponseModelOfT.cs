@@ -3,8 +3,8 @@ using BAF.Model.Data;
 
 namespace BAF.Model.Response
 {
-    public interface IResponseModelOfT<out TObjectModel, TIdType>
-        where TObjectModel : ObjectModelBaseOfT<TIdType>
+    public interface IResponseModelOfT<out TObjectModel>
+        where TObjectModel : ObjectModelBase
     {
         string UId { get; }
         bool Success { get; }
@@ -14,11 +14,11 @@ namespace BAF.Model.Response
         TObjectModel Data { get; }
 
         ICollection<KeyValuePair<string, string>> Errors { get; set; }
-        ICollection<KeyValuePair<string, string>> Pairs { get; set; }
+        ICollection<KeyValuePair<string, string>> Params { get; set; }
 
-        IResponseModelOfT<TObjectModel, TIdType> AddError(string error);
-        IResponseModelOfT<TObjectModel, TIdType> AddError(string header, string body);
+        IResponseModelOfT<TObjectModel> AddError(string error);
+        IResponseModelOfT<TObjectModel> AddError(string header, string body);
 
-        IResponseModelOfT<TObjectModel, TIdType> AddPair(string key, string value);
+        IResponseModelOfT<TObjectModel> AddPair(string key, string value);
     }
 }

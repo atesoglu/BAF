@@ -4,13 +4,13 @@ using BAF.Model.Response;
 
 namespace BAF.Business.Module
 {
-    public interface IModuleBase<TObjectModel, TIdType>
-        where TObjectModel : ObjectModelBaseOfT<TIdType>
+    public interface IModuleBase<TObjectModel>
+        where TObjectModel : ObjectModelBase
     {
-        IResponseModelOfT<TObjectModel, TIdType> Get(TIdType id, IActorModel actorModel);
-        IResponseModelOfT<TObjectModel, TIdType> Add(TObjectModel objectModel, IActorModel actorModel);
-        IResponseModelOfT<TObjectModel, TIdType> Update(TObjectModel objectModel, IActorModel actorModel);
-        IResponseModelOfT<TObjectModel, TIdType> Remove(TIdType id, IActorModel actorModel);
-        IResponseModelOfT<TObjectModel, TIdType> Remove(TObjectModel objectModel, IActorModel actorModel);
+        IResponseModelOfT<TObjectModel> Get(int id, IActorModel actorModel);
+        IResponseModelOfT<TObjectModel> Add(TObjectModel objectModel, IActorModel actorModel);
+        IResponseModelOfT<TObjectModel> Update(TObjectModel objectModel, IActorModel actorModel);
+        IResponseModelOfT<TObjectModel> Remove(int id, IActorModel actorModel);
+        IResponseModelOfT<TObjectModel> Remove(TObjectModel objectModel, IActorModel actorModel);
     }
 }
