@@ -39,7 +39,6 @@
     <ProjectReference Include="..\BAF.Service.RabbitMQ\BAF.Service.RabbitMQ.csproj" />
     <ProjectReference Include="..\BAF.Service.Redis\BAF.Service.Redis.csproj" />
     <ProjectReference Include="..\BAF.Service.Serilog\BAF.Service.Serilog.csproj" />
-    <ProjectReference Include="..\BAF.Service.SimpleInjector\BAF.Service.SimpleInjector.csproj" />
     <ProjectReference Include="..\BAF\BAF.csproj" />
   </ItemGroup>
 </Project>

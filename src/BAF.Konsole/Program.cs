@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using BAF.Data.Store;
-using BAF.Model.Actor;
-using BAF.Model.Data;
 
 namespace BAF.Konsole
 {
@@ -13,6 +9,8 @@ namespace BAF.Konsole
             Console.WriteLine("Hello World!");
 
             var a = BAF.App;
+            var builder = new BAFBuilder();
+            //builder ;
         }
     }
 }
