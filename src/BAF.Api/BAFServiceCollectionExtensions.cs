@@ -5,19 +5,19 @@ namespace BAF.Api
 {
     public static class BAFServiceCollectionExtensions
     {
-        public static IBAFBuilder AddBAF(this IServiceCollection services)
+        public static IAppBuilder AddBAF(this IServiceCollection services)
         {
-            var builder = new BAFBuilder();
-            builder.App.ConfigureServices();
+            var builder = new AppBuilder();
+            builder.Context.ConfigureServices();
 
             return builder;
         }
 
         public static IApplicationBuilder UseBAF(this IApplicationBuilder applicationBuilder)
         {
-            BAF.App.RegisterIocComponents();
-            BAF.App.Configure();
-            BAF.App.Verify();
+            App.Context.RegisterIocComponents();
+            App.Context.Configure();
+            App.Context.Verify();
 
             return applicationBuilder;
         }

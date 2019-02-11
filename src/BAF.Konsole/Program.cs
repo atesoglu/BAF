@@ -13,10 +13,10 @@ namespace BAF.Konsole
 
             sw.Start();
 
-            BAF.App.ConfigureServices();
-            BAF.App.RegisterIocComponents();
-            BAF.App.Configure();
-            BAF.App.Verify();
+            App.Context.ConfigureServices();
+            App.Context.RegisterIocComponents();
+            App.Context.Configure();
+            App.Context.Verify();
 
             Console.WriteLine($"Elapsed: {sw.Elapsed}");
             Console.Read();

@@ -14,8 +14,8 @@ namespace BAF.Business.Module
         {
             var response = new ResponseModel<TObjectModel>();
 
-            try { response.Data = BAF.App.Ioc.Resolve<TIStore>().Get(id); response.Total = response.Data != null ? 1 : 0; }
-            catch (Exception ex) { BAF.App.Logger.Error(ex, ex.Message); response.AddError(ex.Message, ex.ToString()); }
+            try { response.Data = App.Context.Ioc.Resolve<TIStore>().Get(id); response.Total = response.Data != null ? 1 : 0; }
+            catch (Exception ex) { App.Context.Logger.Error(ex, ex.Message); response.AddError(ex.Message, ex.ToString()); }
 
             return response;
         }
