@@ -2,6 +2,17 @@
 
   <PropertyGroup>
     <TargetFramework>netcoreapp2.1</TargetFramework>
+    
+    <Title>BAF.Api</Title>
+    <Authors>Kadir Atesoglu</Authors>
+    <Description>A custom built .net core web api application framework.</Description>
+    <Copyright>Copyright 2019</Copyright>
+    <PackageProjectUrl>http://kadir.atesoglu.me/work/baf</PackageProjectUrl>
+    <PackageLicenseUrl>GPL-3.0-or-later</PackageLicenseUrl>
+    <PackageIconUrl>http://kadir.atesoglu.me/work/baf/assets/images/icon.png</PackageIconUrl>
+    <RepositoryUrl>https://github.com/atesoglu/baf</RepositoryUrl>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <Version>1.0.1</Version>
   </PropertyGroup>
 
   <ItemGroup>
@@ -9,6 +20,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <PackageReference Include="BAF" Version="1.0.0" />
     <PackageReference Include="Microsoft.AspNetCore" Version="2.2.0" />
     <PackageReference Include="Microsoft.AspNetCore.ApplicationInsights.HostingStartup" Version="2.2.0" />
     <PackageReference Include="Microsoft.AspNetCore.Hosting.Abstractions" Version="2.2.0" />
@@ -18,9 +30,5 @@
     <PackageReference Include="Microsoft.AspNetCore.StaticFiles" Version="2.2.0" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="2.2.1" />
     <PackageReference Include="Microsoft.Extensions.Logging.Debug" Version="2.2.0" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <ProjectReference Include="..\BAF\BAF.csproj" />
   </ItemGroup>
 </Project>

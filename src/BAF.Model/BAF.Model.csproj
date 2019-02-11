@@ -9,7 +9,9 @@
         <PackageProjectUrl>http://kadir.atesoglu.me/work/baf</PackageProjectUrl>
         <PackageLicenseUrl>GPL-3.0-or-later</PackageLicenseUrl>
         <PackageIconUrl>http://kadir.atesoglu.me/work/baf/assets/images/icon.png</PackageIconUrl>
-        <RepositoryUrl>https://github.com/atesoglu/BAF</RepositoryUrl>
+        <RepositoryUrl>https://github.com/atesoglu/baf</RepositoryUrl>
+        <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+        <Version>1.0.1</Version>
     </PropertyGroup>
 
     <ItemGroup>

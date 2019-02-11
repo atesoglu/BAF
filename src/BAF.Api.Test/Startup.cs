@@ -10,7 +10,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
-using BAF.Service.MemoryCache;
+//using BAF.Service.MemoryCache;
 
 namespace BAF.Api.Test
 {
@@ -27,10 +27,10 @@ namespace BAF.Api.Test
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddMvc();
-            services
-                .AddBAF()
-                .AddMemoryCache()
-                ;
+            //services
+            //    .AddBAF()
+            //    .AddMemoryCache()
+            //    ;
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -47,7 +47,7 @@ namespace BAF.Api.Test
 
             app.UseHttpsRedirection();
             app.UseMvc();
-            app.UseBAF();
+            //app.UseBAF();
         }
     }
 }
