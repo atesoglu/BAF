@@ -16,7 +16,7 @@
     <PackageReference Include="BAF.Data.EFCore" Version="1.0.0" />
     <PackageReference Include="BAF.Exceptions" Version="1.0.1" />
     <PackageReference Include="BAF.Extensions" Version="1.0.1" />
-    <PackageReference Include="BAF.Model" Version="1.0.1" />
+    <PackageReference Include="BAF.Model" Version="1.0.2" />
     <PackageReference Include="Microsoft.AspNetCore" Version="2.2.0" />
     <PackageReference Include="Microsoft.AspNetCore.ApplicationInsights.HostingStartup" Version="2.2.0" />
     <PackageReference Include="Microsoft.AspNetCore.Hosting.Abstractions" Version="2.2.0" />

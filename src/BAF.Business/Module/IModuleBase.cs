@@ -7,10 +7,10 @@ namespace BAF.Business.Module
     public interface IModuleBase<TObjectModel>
         where TObjectModel : ObjectModelBase
     {
-        IResponseModelOfT<TObjectModel> Get(int id, IActorModel actorModel);
-        IResponseModelOfT<TObjectModel> Add(TObjectModel objectModel, IActorModel actorModel);
-        IResponseModelOfT<TObjectModel> Update(TObjectModel objectModel, IActorModel actorModel);
-        IResponseModelOfT<TObjectModel> Remove(int id, IActorModel actorModel);
-        IResponseModelOfT<TObjectModel> Remove(TObjectModel objectModel, IActorModel actorModel);
+        IResponseModel<TObjectModel> Get(int id, IActorModel actorModel);
+        IResponseModel<TObjectModel> Add(TObjectModel objectModel, IActorModel actorModel);
+        IResponseModel<TObjectModel> Update(TObjectModel objectModel, IActorModel actorModel);
+        IResponseModel<TObjectModel> Remove(int id, IActorModel actorModel);
+        IResponseModel<TObjectModel> Remove(TObjectModel objectModel, IActorModel actorModel);
     }
 }

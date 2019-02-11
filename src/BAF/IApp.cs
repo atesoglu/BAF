@@ -5,7 +5,7 @@ using BAF.Service.Core.Mapper;
 
 namespace BAF
 {
-    public interface IBAF
+    public interface IApp
     {
         IBAFIoc Ioc { get; }
         IBAFMapper Mapper { get; }

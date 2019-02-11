@@ -1,9 +1,8 @@
 using System.Collections.Generic;
-using BAF.Model.Data;
 
 namespace BAF.Model.Response
 {
-    public interface IResponseModelOfT<out T>
+    public interface IResponseModel<out T>
     {
         string UId { get; }
         bool Success { get; }
@@ -15,9 +14,9 @@ namespace BAF.Model.Response
         ICollection<KeyValuePair<string, string>> Errors { get; set; }
         ICollection<KeyValuePair<string, string>> Params { get; set; }
 
-        IResponseModelOfT<T> AddError(string error);
-        IResponseModelOfT<T> AddError(string header, string body);
+        IResponseModel<T> AddError(string error);
+        IResponseModel<T> AddError(string header, string body);
 
-        IResponseModelOfT<T> AddPair(string key, string value);
+        IResponseModel<T> AddParam(string key, string value);
     }
 }

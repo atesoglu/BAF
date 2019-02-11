@@ -5,9 +5,9 @@ namespace BAF.Service.MemoryCache
 {
     public static class IBAFBuilderExtensions
     {
-        public static IBAFBuilder AddMemoryCache(this IBAFBuilder bafBuilder)
+        public static IAppBuilder AddMemoryCache(this IAppBuilder bafBuilder)
         {
-            bafBuilder.App.Ioc.Register<IBAFCache, MemoryCacheImpl>(Core.Ioc.Lifetimes.Singleton);
+            bafBuilder.Context.Ioc.Register<IBAFCache, MemoryCacheImpl>(Core.Ioc.Lifetimes.Singleton);
 
             return bafBuilder;
         }
