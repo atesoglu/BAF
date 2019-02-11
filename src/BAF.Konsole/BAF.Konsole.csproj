@@ -6,20 +6,14 @@
     </PropertyGroup>
 
     <ItemGroup>
-      <ProjectReference Include="..\BAF.Api\BAF.Api.csproj" />
-      <ProjectReference Include="..\BAF.Data.Dapper\BAF.Data.Dapper.csproj" />
-      <ProjectReference Include="..\BAF.Data.EFCore\BAF.Data.EFCore.csproj" />
-      <ProjectReference Include="..\BAF.Service.AmazonMQ\BAF.Service.AmazonMQ.csproj" />
-      <ProjectReference Include="..\BAF.Service.DbUp\BAF.Service.DbUp.csproj" />
-      <ProjectReference Include="..\BAF.Service.MemoryCache\BAF.Service.MemoryCache.csproj" />
-      <ProjectReference Include="..\BAF.Service.RabbitMQ\BAF.Service.RabbitMQ.csproj" />
-      <ProjectReference Include="..\BAF.Service.Redis\BAF.Service.Redis.csproj" />
-      <ProjectReference Include="..\BAF\BAF.csproj" />
-      <ProjectReference Include="..\BAF.Business\BAF.Business.csproj" />
-      <ProjectReference Include="..\BAF.Data\BAF.Data.csproj" />
-      <ProjectReference Include="..\BAF.Exceptions\BAF.Exceptions.csproj" />
-      <ProjectReference Include="..\BAF.Extensions\BAF.Extensions.csproj" />
-      <ProjectReference Include="..\BAF.Model\BAF.Model.csproj" />
+      <PackageReference Include="BAF" Version="1.0.1" />
+      <PackageReference Include="BAF.Business" Version="1.0.0" />
+      <PackageReference Include="BAF.Data" Version="1.0.1" />
+      <PackageReference Include="BAF.Data.Dapper" Version="1.0.0" />
+      <PackageReference Include="BAF.Data.EFCore" Version="1.0.0" />
+      <PackageReference Include="BAF.Exceptions" Version="1.0.1" />
+      <PackageReference Include="BAF.Extensions" Version="1.0.1" />
+      <PackageReference Include="BAF.Model" Version="1.0.1" />
     </ItemGroup>
 
 </Project>
