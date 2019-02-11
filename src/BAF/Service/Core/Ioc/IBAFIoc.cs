@@ -9,5 +9,6 @@ namespace BAF.Service.Core.Ioc
         TService Resolve<TService>() where TService : class;
 
         void Configure();
+        void Verify();
     }
 }

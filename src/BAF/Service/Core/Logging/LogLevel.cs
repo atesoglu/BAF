@@ -1,4 +1,4 @@
-namespace BAF.Logging
+namespace BAF.Service.Core.Logging
 {
     public enum LogLevel
     {

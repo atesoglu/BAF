@@ -9,7 +9,7 @@ namespace BAF.Data.Store
         where TDomainModel : DomainModelBase, new()
     {
         public abstract TObjectModel Get(int id);
-        public abstract TObjectModel Get(ICollection<int> ids);
+        public abstract ICollection<TObjectModel> Get(ICollection<int> ids);
 
         public abstract TObjectModel Add(TObjectModel objectModel, IActorModel actor);
         public abstract TObjectModel Update(TObjectModel objectModel, IActorModel actor);

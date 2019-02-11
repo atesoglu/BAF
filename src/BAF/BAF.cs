@@ -4,16 +4,18 @@ using BAF.Service.Core.Ioc;
 using BAF.Service.Core.Mapper;
 using System;
 using AutoMapper;
+using BAF.Service.Core.Logging;
 
 namespace BAF
 {
-    public class BAF : IBAF
+    public sealed class BAF : IBAF
     {
         public static readonly IBAF App = new BAF();
 
-        public IBAFIoc Ioc { get; }
+        public IBAFIoc Ioc { get; private set; }
         public IBAFMapper Mapper => Ioc.Resolve<IBAFMapper>();
         public IBAFCache Cache => Ioc.Resolve<IBAFCache>();
+        public IBAFLogger Logger => Ioc.Resolve<IBAFLogger>();
 
         public event EventHandler<BafContextEventArgs> PreConfigureServices;
         public event EventHandler<BafContextEventArgs> PostConfigureServices;
@@ -24,39 +26,43 @@ namespace BAF
         public event EventHandler<BafContextEventArgs> PreVerify;
         public event EventHandler<BafContextEventArgs> PostVerify;
 
-        protected BAF()
-        {
-            Ioc = new SimpleInjectorImpl();
-        }
-
-        public virtual void ConfigureServices()
+        public void ConfigureServices()
         {
             OnPreConfigureServices(new BafContextEventArgs(this));
 
+            Ioc = new SimpleInjectorImpl();
+
             OnPostConfigureServices(new BafContextEventArgs(this));
         }
-        public virtual void RegisterIocComponents()
+        public void RegisterIocComponents()
         {
             OnPreRegisterIocComponents(new BafContextEventArgs(this));
-            
+
             Ioc.Register<IBAFMapper, AutoMapperImpl>(Lifetimes.Singleton);
             Ioc.Register<IBAFCache, DictionaryCacheImpl>(Lifetimes.Singleton);
+            Ioc.Register<IBAFLogger, BAFLoggingBaseImpl>(Lifetimes.Singleton);
 
             OnPostRegisterIocComponents(new BafContextEventArgs(this));
         }
-        public virtual void Configure()
+        public void Configure()
         {
             OnPreConfigure(new BafContextEventArgs(this));
-            
+
             Ioc.Configure();
             Mapper.Configure();
             Cache.Configure();
+            Logger.Configure();
 
             OnPostConfigure(new BafContextEventArgs(this));
         }
-        public virtual void Verify()
+        public void Verify()
         {
             OnPreVerify(new BafContextEventArgs(this));
+
+            Ioc.Verify();
+            Mapper.Verify();
+            Cache.Verify();
+            Logger.Verify();
 
             OnPostVerify(new BafContextEventArgs(this));
         }

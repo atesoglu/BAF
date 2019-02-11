@@ -8,7 +8,7 @@ namespace BAF.Data.Store
         where TObjectModel : ObjectModelBase, new()
     {
         TObjectModel Get(int id);
-        TObjectModel Get(ICollection<int> ids);
+        ICollection<TObjectModel> Get(ICollection<int> ids);
 
         TObjectModel Add(TObjectModel objectModel, IActorModel actor);
         TObjectModel Update(TObjectModel objectModel, IActorModel actor);

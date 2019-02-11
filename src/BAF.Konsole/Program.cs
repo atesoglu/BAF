@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Diagnostics;
 
 namespace BAF.Konsole
 {
@@ -8,9 +9,17 @@ namespace BAF.Konsole
         {
             Console.WriteLine("Hello World!");
 
-            var a = BAF.App;
-            var builder = new BAFBuilder();
-            //builder ;
+            var sw = new Stopwatch();
+
+            sw.Start();
+
+            BAF.App.ConfigureServices();
+            BAF.App.RegisterIocComponents();
+            BAF.App.Configure();
+            BAF.App.Verify();
+
+            Console.WriteLine($"Elapsed: {sw.Elapsed}");
+            Console.Read();
         }
     }
 }

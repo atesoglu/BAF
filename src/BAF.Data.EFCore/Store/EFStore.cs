@@ -29,7 +29,7 @@ namespace BAF.Data.EFCore.Store
             throw new System.NotImplementedException();
         }
 
-        public override TObjectModel Get(ICollection<int> ids)
+        public override ICollection<TObjectModel> Get(ICollection<int> ids)
         {
             throw new System.NotImplementedException();
         }

@@ -57,6 +57,10 @@ namespace BAF.Service.Core.Ioc
 
         public void Configure()
         {
+        }
+
+        public void Verify()
+        {
             try
             {
                 _container.Verify();

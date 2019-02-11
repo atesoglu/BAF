@@ -2,7 +2,7 @@
 
 namespace BAF.Service.RabbitMQ
 {
-    public class Class1
+    public class IBAFBuilderExtensions
     {
     }
 }

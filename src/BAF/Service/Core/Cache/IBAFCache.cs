@@ -5,6 +5,7 @@ namespace BAF.Service.Core.Cache
     public interface IBAFCache
     {
         void Configure();
+        void Verify();
         
         bool Exists(string key);
         string Get(string key);

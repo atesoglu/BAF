@@ -1,5 +1,6 @@
 ﻿using CacheManager.Core;
 using System;
+using BAF.Exceptions.Service.Core;
 
 namespace BAF.Service.Core.Cache
 {
@@ -14,6 +15,23 @@ namespace BAF.Service.Core.Cache
         public void Configure()
         {
             _cache = CacheFactory.Build("DictionaryCache", settings => settings.WithJsonSerializer().WithDictionaryHandle("DictionaryCache"));
+        }
+
+        public void Verify()
+        {
+            try
+            {
+                var verificationString = Guid.NewGuid().ToString("N");
+                Store("verification", verificationString);
+                if (verificationString != Get<string>("verification"))
+                {
+                    throw new BAFCacheVerificationException("Cache verification is failed.", null);
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new BAFCacheVerificationException("Cache verification is failed.", ex);
+            }
         }
 
         public virtual bool Exists(string key)

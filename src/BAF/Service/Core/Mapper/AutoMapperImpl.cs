@@ -21,6 +21,10 @@ namespace BAF.Service.Core.Mapper
 
         public void Configure()
         {
+        }
+
+        public void Verify()
+        {
             try
             {
                 AutoMapper.Mapper.AssertConfigurationIsValid();

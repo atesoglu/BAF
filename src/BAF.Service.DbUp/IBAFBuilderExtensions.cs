@@ -2,7 +2,7 @@
 
 namespace BAF.Service.DbUp
 {
-    public class Class1
+    public class IBAFBuilderExtensions
     {
     }
 }

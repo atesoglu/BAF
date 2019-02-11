@@ -2,7 +2,7 @@
 
 namespace BAF.Service.Redis
 {
-    public class Class1
+    public class IBAFBuilderExtensions
     {
     }
 }
