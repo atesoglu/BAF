@@ -4,6 +4,8 @@ namespace BAF.Service.Core.Cache
 {
     public interface IBAFCache
     {
+        void Configure();
+        
         bool Exists(string key);
         string Get(string key);
         T Get<T>(string key) where T : class;

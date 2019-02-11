@@ -3,6 +3,7 @@ using BAF.Service.Core.Cache;
 using BAF.Service.Core.Ioc;
 using BAF.Service.Core.Mapper;
 using System;
+using AutoMapper;
 
 namespace BAF
 {
@@ -37,12 +38,19 @@ namespace BAF
         public virtual void RegisterIocComponents()
         {
             OnPreRegisterIocComponents(new BafContextEventArgs(this));
+            
+            Ioc.Register<IBAFMapper, AutoMapperImpl>(Lifetimes.Singleton);
+            Ioc.Register<IBAFCache, DictionaryCacheImpl>(Lifetimes.Singleton);
 
             OnPostRegisterIocComponents(new BafContextEventArgs(this));
         }
         public virtual void Configure()
         {
             OnPreConfigure(new BafContextEventArgs(this));
+            
+            Ioc.Configure();
+            Mapper.Configure();
+            Cache.Configure();
 
             OnPostConfigure(new BafContextEventArgs(this));
         }

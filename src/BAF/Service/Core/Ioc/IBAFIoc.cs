@@ -7,5 +7,7 @@ namespace BAF.Service.Core.Ioc
             where TImplementation : class, TService;
 
         TService Resolve<TService>() where TService : class;
+
+        void Configure();
     }
 }
