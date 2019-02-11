@@ -19,7 +19,7 @@
 
   <ItemGroup>
     <PackageReference Include="BAF" Version="1.0.1" />
-    <PackageReference Include="BAF.Data" Version="1.0.1" />
+    <PackageReference Include="BAF.Data" Version="1.0.2" />
     <PackageReference Include="BAF.Model" Version="1.0.2" />
   </ItemGroup>
 
