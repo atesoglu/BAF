@@ -11,12 +11,12 @@ namespace BAF.Data.Store
         public abstract TObjectModel Get(int id);
         public abstract ICollection<TObjectModel> Get(ICollection<int> ids);
 
-        public abstract TObjectModel Add(TObjectModel objectModel, IActorModel actor);
-        public abstract TObjectModel Update(TObjectModel objectModel, IActorModel actor);
-        public TObjectModel Remove(int id, IActorModel actor)
+        public abstract TObjectModel Add(TObjectModel objectModel, IActorModel identityModel);
+        public abstract TObjectModel Update(TObjectModel objectModel, IActorModel identityModel);
+        public TObjectModel Remove(int id, IActorModel identityModel)
         {
-            return Remove(Get(id), actor);
+            return Remove(Get(id), identityModel);
         }
-        public abstract TObjectModel Remove(TObjectModel objectModel, IActorModel actor);
+        public abstract TObjectModel Remove(TObjectModel objectModel, IActorModel identityModel);
     }
 }

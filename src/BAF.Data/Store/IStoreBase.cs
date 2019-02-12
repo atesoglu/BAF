@@ -10,9 +10,9 @@ namespace BAF.Data.Store
         TObjectModel Get(int id);
         ICollection<TObjectModel> Get(ICollection<int> ids);
 
-        TObjectModel Add(TObjectModel objectModel, IActorModel actor);
-        TObjectModel Update(TObjectModel objectModel, IActorModel actor);
-        TObjectModel Remove(int id, IActorModel actor);
-        TObjectModel Remove(TObjectModel objectModel, IActorModel actor);
+        TObjectModel Add(TObjectModel objectModel, IActorModel identityModel);
+        TObjectModel Update(TObjectModel objectModel, IActorModel identityModel);
+        TObjectModel Remove(int id, IActorModel identityModel);
+        TObjectModel Remove(TObjectModel objectModel, IActorModel identityModel);
     }
 }

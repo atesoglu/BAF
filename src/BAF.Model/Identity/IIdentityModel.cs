@@ -1,6 +1,6 @@
-﻿namespace BAF.Model.Actor
+﻿namespace BAF.Model.Identity
 {
-    public interface IActorModel
+    public interface IIdentityModel
     {
         string Identifier { get; }
         string Name { get; set; }

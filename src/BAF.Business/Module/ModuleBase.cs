@@ -9,15 +9,15 @@ namespace BAF.Business.Module
         where TObjectModel : ObjectModelBase, new()
         where TIStore : class, IStoreBase<TObjectModel>
     {
-        public abstract IResponseModel<TObjectModel> Get(int id, IActorModel actorModel);
-        public abstract IResponseModel<TObjectModel> Add(TObjectModel objectModel, IActorModel actorModel);
-        public abstract IResponseModel<TObjectModel> Update(TObjectModel objectModel, IActorModel actorModel);
+        public abstract IResponseModel<TObjectModel> Get(int id, IActorModel identityModel);
+        public abstract IResponseModel<TObjectModel> Add(TObjectModel objectModel, IActorModel identityModel);
+        public abstract IResponseModel<TObjectModel> Update(TObjectModel objectModel, IActorModel identityModel);
 
-        public IResponseModel<TObjectModel> Remove(int id, IActorModel actorModel)
+        public IResponseModel<TObjectModel> Remove(int id, IActorModel identityModel)
         {
-            return Remove(Get(id, actorModel).Data, actorModel);
+            return Remove(Get(id, identityModel).Data, identityModel);
         }
 
-        public abstract IResponseModel<TObjectModel> Remove(TObjectModel objectModel, IActorModel actorModel);
+        public abstract IResponseModel<TObjectModel> Remove(TObjectModel objectModel, IActorModel identityModel);
     }
 }

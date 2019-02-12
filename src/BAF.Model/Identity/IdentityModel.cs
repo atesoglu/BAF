@@ -1,6 +1,6 @@
-﻿namespace BAF.Model.Actor
+﻿namespace BAF.Model.Identity
 {
-    public class ActorModel : IActorModel
+    public class IdentityModel : IIdentityModel
     {
         public string Identifier { get; set; }
         public string Name { get; set; }
