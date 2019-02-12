@@ -15,6 +15,7 @@ namespace BAF
         public IBAFMapper Mapper => Ioc.Resolve<IBAFMapper>();
         public IBAFCache Cache => Ioc.Resolve<IBAFCache>();
         public IBAFLogger Logger => Ioc.Resolve<IBAFLogger>();
+        public ParamCollection Params { get; }
 
         public event EventHandler<BAFEventArgs> PreConfigureServices;
         public event EventHandler<BAFEventArgs> PostConfigureServices;
@@ -24,6 +25,11 @@ namespace BAF
         public event EventHandler<BAFEventArgs> PostConfigure;
         public event EventHandler<BAFEventArgs> PreVerify;
         public event EventHandler<BAFEventArgs> PostVerify;
+
+        public App()
+        {
+            Params = new ParamCollection();
+        }
 
         public void ConfigureServices()
         {

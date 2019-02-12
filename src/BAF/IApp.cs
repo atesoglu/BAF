@@ -11,6 +11,7 @@ namespace BAF
         IBAFMapper Mapper { get; }
         IBAFCache Cache { get; }
         IBAFLogger Logger { get; }
+        ParamCollection Params { get; }
 
         void ConfigureServices();
         void RegisterIocComponents();
