@@ -7,10 +7,10 @@
 
     <ItemGroup>
       <PackageReference Include="BAF" Version="1.0.2" />
-      <PackageReference Include="BAF.Business" Version="1.0.2" />
+      <PackageReference Include="BAF.Business" Version="1.0.3" />
       <PackageReference Include="BAF.Data" Version="1.0.3" />
-      <PackageReference Include="BAF.Data.Dapper" Version="1.0.3" />
-      <PackageReference Include="BAF.Data.EFCore" Version="1.0.3" />
+      <PackageReference Include="BAF.Data.Dapper" Version="1.0.4" />
+      <PackageReference Include="BAF.Data.EFCore" Version="1.0.4" />
       <PackageReference Include="BAF.Exceptions" Version="1.0.2" />
       <PackageReference Include="BAF.Extensions" Version="1.0.2" />
       <PackageReference Include="BAF.Model" Version="1.0.3" />
