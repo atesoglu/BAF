@@ -1,11 +1,11 @@
+using BAF.Data.Store;
+using BAF.Model.Data;
+using BAF.Model.Identity;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Linq.Expressions;
-using BAF.Data.Store;
-using BAF.Model.Actor;
-using BAF.Model.Data;
-using Microsoft.EntityFrameworkCore;
 
 namespace BAF.Data.EFCore.Store
 {
@@ -34,17 +34,17 @@ namespace BAF.Data.EFCore.Store
             throw new System.NotImplementedException();
         }
 
-        public override TObjectModel Add(TObjectModel objectModel, IActorModel actor)
+        public override TObjectModel Add(TObjectModel objectModel, IIdentityModel identityModel)
         {
             throw new System.NotImplementedException();
         }
 
-        public override TObjectModel Update(TObjectModel objectModel, IActorModel actor)
+        public override TObjectModel Update(TObjectModel objectModel, IIdentityModel identityModel)
         {
             throw new System.NotImplementedException();
         }
 
-        public override TObjectModel Remove(TObjectModel objectModel, IActorModel actor)
+        public override TObjectModel Remove(TObjectModel objectModel, IIdentityModel identityModel)
         {
             throw new System.NotImplementedException();
         }
