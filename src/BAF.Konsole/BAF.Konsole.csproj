@@ -13,7 +13,7 @@
       <PackageReference Include="BAF.Data.EFCore" Version="1.0.2" />
       <PackageReference Include="BAF.Exceptions" Version="1.0.2" />
       <PackageReference Include="BAF.Extensions" Version="1.0.2" />
-      <PackageReference Include="BAF.Model" Version="1.0.2" />
+      <PackageReference Include="BAF.Model" Version="1.0.3" />
     </ItemGroup>
 
 </Project>

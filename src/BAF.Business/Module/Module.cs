@@ -1,5 +1,5 @@
 ﻿using BAF.Data.Store;
-using BAF.Model.Actor;
+using BAF.Model.Identity;
 using BAF.Model.Data;
 using BAF.Model.Response;
 using System;
@@ -10,7 +10,7 @@ namespace BAF.Business.Module
         where TObjectModel : ObjectModelBase, new()
         where TIStore : class, IStoreBase<TObjectModel>
     {
-        public override IResponseModel<TObjectModel> Get(int id, IActorModel identityModel)
+        public override IResponseModel<TObjectModel> Get(int id, IIdentityModel identityModel)
         {
             var response = new ResponseModel<TObjectModel>();
 
@@ -19,7 +19,7 @@ namespace BAF.Business.Module
 
             return response;
         }
-        public override IResponseModel<TObjectModel> Add(TObjectModel objectModel, IActorModel identityModel)
+        public override IResponseModel<TObjectModel> Add(TObjectModel objectModel, IIdentityModel identityModel)
         {
             var response = new ResponseModel<TObjectModel>();
 
@@ -28,7 +28,7 @@ namespace BAF.Business.Module
 
             return response;
         }
-        public override IResponseModel<TObjectModel> Update(TObjectModel objectModel, IActorModel identityModel)
+        public override IResponseModel<TObjectModel> Update(TObjectModel objectModel, IIdentityModel identityModel)
         {
             var response = new ResponseModel<TObjectModel>();
 
@@ -37,7 +37,7 @@ namespace BAF.Business.Module
 
             return response;
         }
-        public override IResponseModel<TObjectModel> Remove(TObjectModel objectModel, IActorModel identityModel)
+        public override IResponseModel<TObjectModel> Remove(TObjectModel objectModel, IIdentityModel identityModel)
         {
             var response = new ResponseModel<TObjectModel>();
 

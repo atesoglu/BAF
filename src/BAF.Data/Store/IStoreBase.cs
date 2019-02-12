@@ -1,5 +1,5 @@
 using System.Collections.Generic;
-using BAF.Model.Actor;
+using BAF.Model.Identity;
 using BAF.Model.Data;
 
 namespace BAF.Data.Store
@@ -10,9 +10,9 @@ namespace BAF.Data.Store
         TObjectModel Get(int id);
         ICollection<TObjectModel> Get(ICollection<int> ids);
 
-        TObjectModel Add(TObjectModel objectModel, IActorModel identityModel);
-        TObjectModel Update(TObjectModel objectModel, IActorModel identityModel);
-        TObjectModel Remove(int id, IActorModel identityModel);
-        TObjectModel Remove(TObjectModel objectModel, IActorModel identityModel);
+        TObjectModel Add(TObjectModel objectModel, IIdentityModel identityModel);
+        TObjectModel Update(TObjectModel objectModel, IIdentityModel identityModel);
+        TObjectModel Remove(int id, IIdentityModel identityModel);
+        TObjectModel Remove(TObjectModel objectModel, IIdentityModel identityModel);
     }
 }
