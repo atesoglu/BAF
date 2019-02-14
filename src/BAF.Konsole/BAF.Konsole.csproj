@@ -6,7 +6,7 @@
     </PropertyGroup>
 
     <ItemGroup>
-      <PackageReference Include="BAF" Version="1.0.2" />
+      <PackageReference Include="BAF" Version="1.0.3" />
       <PackageReference Include="BAF.Business" Version="1.0.3" />
       <PackageReference Include="BAF.Data" Version="1.0.3" />
       <PackageReference Include="BAF.Data.Dapper" Version="1.0.4" />
