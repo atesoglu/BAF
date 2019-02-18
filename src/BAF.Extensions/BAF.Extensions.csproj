@@ -1,7 +1,7 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>netcoreapp2.1</TargetFramework>
+    <TargetFramework>netcoreapp2.2</TargetFramework>
     <Title>BAF.Model</Title>
     <Authors>Kadir Atesoglu</Authors>
     <Description>A custom built .net core web api application framework.</Description>
