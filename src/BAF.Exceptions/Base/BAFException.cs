@@ -11,6 +11,10 @@ namespace BAF.Exceptions.Base
             UId = Guid.NewGuid().ToString("N");
         }
 
+        public BAFException(string message) : base(message)
+        {
+        }
+
         protected BAFException(string message, Exception innerException) : base(message, innerException)
         {
         }
