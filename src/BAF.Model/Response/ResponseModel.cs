@@ -6,7 +6,7 @@ namespace BAF.Model.Response
     public class ResponseModel<T> : IResponseModel<T>
     {
         public string UId { get; set; }
-        public bool Success => Errors?.Count == 0;
+        public bool Success => Errors == null || Errors.Count == 0;
         public string Message { get; set; }
         public int Total { get; set; }
         public T Data { get; set; }
