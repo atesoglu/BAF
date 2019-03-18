@@ -5,6 +5,7 @@ namespace BAF.Service.Core.Mapper
 {
     public class AutoMapperImpl : IBAFMapper
     {
+        private AutoMapper.MapperConfiguration _mapperConfiguration;
         private AutoMapper.Configuration.MapperConfigurationExpression _expression;
         private AutoMapper.IMapper _mapper;
 
@@ -22,15 +23,15 @@ namespace BAF.Service.Core.Mapper
         {
             //AutoMapper.Mapper.Initialize(_expression);
 
-            var mapperConfig = new AutoMapper.MapperConfiguration(_expression);
-            _mapper = new AutoMapper.Mapper(mapperConfig);
+            _mapperConfiguration = new AutoMapper.MapperConfiguration(_expression);
+            _mapper = new AutoMapper.Mapper(_mapperConfiguration);
         }
 
         public void Verify()
         {
             try
             {
-                AutoMapper.Mapper.AssertConfigurationIsValid();
+                _mapperConfiguration.AssertConfigurationIsValid();
             }
             catch (Exception ex)
             {
