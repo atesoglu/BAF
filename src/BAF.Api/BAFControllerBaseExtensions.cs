@@ -1,5 +1,4 @@
 ﻿using BAF.Model.Identity;
-using System;
 using System.Security.Claims;
 
 namespace BAF.Api
@@ -11,9 +10,7 @@ namespace BAF.Api
             return new IdentityModel
             {
                 Identifier = "",
-                Name = "",
-                IpAddress = "",
-                MachineName = Environment.MachineName
+                Name = ""
             };
         }
     }

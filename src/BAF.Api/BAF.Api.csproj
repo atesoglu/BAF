@@ -15,8 +15,8 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="BAF" Version="1.0.3" />
-    <PackageReference Include="BAF.Model" Version="1.0.6" />
+    <PackageReference Include="BAF" Version="1.0.6" />
+    <PackageReference Include="BAF.Model" Version="1.0.7" />
     <PackageReference Include="Microsoft.AspNetCore.Http.Abstractions" Version="2.2.0" />
     <PackageReference Include="Microsoft.Extensions.DependencyInjection.Abstractions" Version="2.2.0" />
     <PackageReference Include="Swashbuckle.AspNetCore" Version="4.0.1" />

@@ -9,14 +9,14 @@
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="BAF" Version="1.0.3" />
+    <PackageReference Include="BAF" Version="1.0.6" />
     <PackageReference Include="BAF.Business" Version="1.0.3" />
     <PackageReference Include="BAF.Data" Version="1.0.3" />
     <PackageReference Include="BAF.Data.Dapper" Version="1.0.4" />
-    <PackageReference Include="BAF.Data.EFCore" Version="1.0.4" />
-    <PackageReference Include="BAF.Exceptions" Version="1.0.2" />
+    <PackageReference Include="BAF.Data.EFCore" Version="1.0.5" />
+    <PackageReference Include="BAF.Exceptions" Version="1.0.3" />
     <PackageReference Include="BAF.Extensions" Version="1.0.2" />
-    <PackageReference Include="BAF.Model" Version="1.0.3" />
+    <PackageReference Include="BAF.Model" Version="1.0.7" />
     <PackageReference Include="Microsoft.AspNetCore" Version="2.2.0" />
     <PackageReference Include="Microsoft.AspNetCore.ApplicationInsights.HostingStartup" Version="2.2.0" />
     <PackageReference Include="Microsoft.AspNetCore.Hosting.Abstractions" Version="2.2.0" />
@@ -24,7 +24,7 @@
     <PackageReference Include="Microsoft.AspNetCore.Identity" Version="2.2.0" />
     <PackageReference Include="Microsoft.AspNetCore.Mvc" Version="2.2.0" />
     <PackageReference Include="Microsoft.AspNetCore.StaticFiles" Version="2.2.0" />
-    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="2.2.2" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="2.2.3" />
     <PackageReference Include="Microsoft.Extensions.Logging.Debug" Version="2.2.0" />
   </ItemGroup>
 </Project>
