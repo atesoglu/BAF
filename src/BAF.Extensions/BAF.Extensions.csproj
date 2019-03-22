@@ -2,7 +2,7 @@
 
   <PropertyGroup>
     <TargetFramework>netcoreapp2.2</TargetFramework>
-    <Title>BAF.Model</Title>
+    <Title>BAF.Extensions</Title>
     <Authors>Kadir Atesoglu</Authors>
     <Description>A custom built .net core web api application framework.</Description>
     <Copyright>Copyright 2019</Copyright>
@@ -11,7 +11,7 @@
     <PackageIconUrl>http://kadir.atesoglu.me/work/baf/assets/images/icon.png</PackageIconUrl>
     <RepositoryUrl>https://github.com/atesoglu/baf</RepositoryUrl>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
-    <Version>1.0.3</Version>
+    <Version>1.0.5</Version>
   </PropertyGroup>
 
 </Project>
