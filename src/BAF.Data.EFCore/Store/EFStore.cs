@@ -18,7 +18,9 @@ namespace BAF.Data.EFCore.Store
         {
             using (var context = new TDbContext())
             {
-                return context.Set<TDomainModel>().Where(predicate).Count();
+                var query = context.Set<TDomainModel>().AsQueryable().AsNoTracking();
+                query = predicate != null ? query.Where(predicate) : query;
+                return query.Count();
             }
         }
 
@@ -44,8 +46,9 @@ namespace BAF.Data.EFCore.Store
         {
             using (var context = new TDbContext())
             {
-                var domainModels = context.Set<TDomainModel>().AsQueryable().AsNoTracking().Where(predicate).ToList();
-                return App.Context.Mapper.Map<ICollection<TDomainModel>, ICollection<TObjectModel>>(domainModels);
+                var query = context.Set<TDomainModel>().AsQueryable().AsNoTracking();
+                query = predicate != null ? query.Where(predicate) : query;
+                return App.Context.Mapper.Map<ICollection<TDomainModel>, ICollection<TObjectModel>>(query.ToList());
             }
         }
 
