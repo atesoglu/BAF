@@ -18,7 +18,9 @@ namespace BAF.Data.EFCore.Store
         {
             using (var context = new TDbContext())
             {
-                return context.Set<TDomainModel>().Where(predicate).Count();
+                var query = context.Set<TDomainModel>().AsQueryable().AsNoTracking();
+                query = predicate != null ? query.Where(predicate) : query;
+                return query.Count();
             }
         }
 
@@ -40,12 +42,15 @@ namespace BAF.Data.EFCore.Store
                 return App.Context.Mapper.Map<ICollection<TDomainModel>, ICollection<TObjectModel>>(domainModels);
             }
         }
-        public ICollection<TObjectModel> Get(Expression<Func<TDomainModel, bool>> predicate = null)
+        public ICollection<TObjectModel> Get(Expression<Func<TDomainModel, bool>> predicate = null, Expression<Func<TDomainModel, object>> includes = null)
         {
             using (var context = new TDbContext())
             {
-                var domainModels = context.Set<TDomainModel>().AsQueryable().AsNoTracking().Where(predicate).ToList();
-                return App.Context.Mapper.Map<ICollection<TDomainModel>, ICollection<TObjectModel>>(domainModels);
+                var query = context.Set<TDomainModel>().AsQueryable().AsNoTracking();
+                query = predicate != null ? query.Where(predicate) : query;
+                query = includes != null ? query.Include(includes) : query;
+
+                return App.Context.Mapper.Map<ICollection<TDomainModel>, ICollection<TObjectModel>>(query.ToList());
             }
         }
 
@@ -83,6 +88,5 @@ namespace BAF.Data.EFCore.Store
                 return App.Context.Mapper.Map<TDomainModel, TObjectModel>(entityEntry.Entity);
             }
         }
-
     }
 }
