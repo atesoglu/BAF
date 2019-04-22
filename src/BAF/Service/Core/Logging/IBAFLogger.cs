@@ -1,9 +1,10 @@
+using BAF.Service.Base;
 using System;
 using System.Collections.Generic;
 
 namespace BAF.Service.Core.Logging
 {
-    public interface IBAFLogger
+    public interface IBAFLogger : IServiceBase
     {
         ICollection<IBAFLogger> Children { get; }
 

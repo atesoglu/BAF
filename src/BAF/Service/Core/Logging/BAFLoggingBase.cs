@@ -5,12 +5,16 @@ namespace BAF.Service.Core.Logging
 {
     public abstract class BAFLoggingBase : IBAFLogger
     {
+        public string ServiceName { get; }
+
         private static readonly object[] NoPropertyValues = new object[0];
 
         public ICollection<IBAFLogger> Children { get; }
 
+
         protected BAFLoggingBase()
         {
+            ServiceName = "Logger";
             Children = new List<IBAFLogger>();
         }
 

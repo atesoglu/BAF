@@ -1,16 +1,19 @@
-﻿using BAF.Service.Core.Cache;
+﻿using BAF.Exceptions.Service.Core;
+using BAF.Service.Core.Cache;
 using CacheManager.Core;
 using System;
-using BAF.Exceptions.Service.Core;
 
 namespace BAF.Service.MemoryCache.Implementation
 {
     public class MemoryCacheImpl : IBAFCache
     {
+        public string ServiceName { get; }
+
         private ICacheManager<object> _cache;
 
         public MemoryCacheImpl()
         {
+            ServiceName = "MemoryCache";
         }
 
         public void Configure()

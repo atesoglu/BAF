@@ -42,13 +42,16 @@ namespace BAF.Data.EFCore.Store
                 return App.Context.Mapper.Map<ICollection<TDomainModel>, ICollection<TObjectModel>>(domainModels);
             }
         }
-        public ICollection<TObjectModel> Get(Expression<Func<TDomainModel, bool>> predicate = null, Expression<Func<TDomainModel, object>> includes = null)
+        public ICollection<TObjectModel> Get(ICollection<Expression<Func<TDomainModel, bool>>> predicates = null, IList<Expression<Func<TDomainModel, object>>> includes = null, Func<IQueryable<TDomainModel>, IOrderedQueryable<TDomainModel>> orderBy = null, int? start = null, int? limit = null)
         {
             using (var context = new TDbContext())
             {
-                var query = context.Set<TDomainModel>().AsQueryable().AsNoTracking();
-                query = predicate != null ? query.Where(predicate) : query;
-                query = includes != null ? query.Include(includes) : query;
+                var query = context.Set<TDomainModel>().AsNoTracking();
+                query = predicates != null ? predicates.Aggregate(query, (current, predicate) => current != null ? current.Where(predicate) : current) : query;
+                //query = includes != null ? query.Include(includes) : query;
+                query = includes != null ? includes.Aggregate(query, (current, include) => current.Include(include)) : query;
+                query = orderBy != null ? orderBy(query) : query;
+                query = start != null && limit != null ? query = query.Skip(start.Value).Take(limit.Value) : query;
 
                 return App.Context.Mapper.Map<ICollection<TDomainModel>, ICollection<TObjectModel>>(query.ToList());
             }

@@ -2,6 +2,7 @@
 using BAF.Model.Data;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Linq.Expressions;
 
 namespace BAF.Data.EFCore.Store
@@ -11,6 +12,6 @@ namespace BAF.Data.EFCore.Store
         where TDomainModel : DomainModelBase, new()
     {
         int Count(Expression<Func<TDomainModel, bool>> predicate = null);
-        ICollection<TObjectModel> Get(Expression<Func<TDomainModel, bool>> predicate = null, Expression<Func<TDomainModel, object>> includes = null);
+        ICollection<TObjectModel> Get(ICollection<Expression<Func<TDomainModel, bool>>> predicates = null, IList<Expression<Func<TDomainModel, object>>> includes = null, Func<IQueryable<TDomainModel>, IOrderedQueryable<TDomainModel>> orderBy = null, int? start = null, int? limit = null);
     }
 }

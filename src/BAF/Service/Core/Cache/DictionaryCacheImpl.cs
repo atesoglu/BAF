@@ -1,15 +1,18 @@
-﻿using CacheManager.Core;
+﻿using BAF.Exceptions.Service.Core;
+using CacheManager.Core;
 using System;
-using BAF.Exceptions.Service.Core;
 
 namespace BAF.Service.Core.Cache
 {
     public class DictionaryCacheImpl : IBAFCache
     {
+        public string ServiceName { get; }
+
         private ICacheManager<object> _cache;
 
         public DictionaryCacheImpl()
         {
+            ServiceName = "DictionaryCache";
         }
 
         public void Configure()

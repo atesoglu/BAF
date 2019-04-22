@@ -5,12 +5,15 @@ namespace BAF.Service.Core.Mapper
 {
     public class AutoMapperImpl : IBAFMapper
     {
+        public string ServiceName { get; }
+
         private AutoMapper.MapperConfiguration _mapperConfiguration;
         private AutoMapper.Configuration.MapperConfigurationExpression _expression;
         private AutoMapper.IMapper _mapper;
 
         public AutoMapperImpl()
         {
+            ServiceName = "AutoMapper";
             _expression = new AutoMapper.Configuration.MapperConfigurationExpression();
         }
 

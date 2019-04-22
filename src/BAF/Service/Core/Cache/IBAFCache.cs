@@ -1,12 +1,13 @@
-﻿using System;
+﻿using BAF.Service.Base;
+using System;
 
 namespace BAF.Service.Core.Cache
 {
-    public interface IBAFCache
+    public interface IBAFCache : IServiceBase
     {
         void Configure();
         void Verify();
-        
+
         bool Exists(string key);
         string Get(string key);
         T Get<T>(string key) where T : class;

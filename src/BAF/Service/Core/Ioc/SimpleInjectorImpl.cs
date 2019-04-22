@@ -1,15 +1,18 @@
-﻿using System;
-using BAF.Exceptions.Service.Core;
+﻿using BAF.Exceptions.Service.Core;
 using SimpleInjector;
+using System;
 
 namespace BAF.Service.Core.Ioc
 {
     public class SimpleInjectorImpl : IBAFIoc
     {
+        public string ServiceName { get; }
+
         private static Container _container;
 
         public SimpleInjectorImpl()
         {
+            ServiceName = "SimpleInjector";
             _container = new Container();
         }
 
@@ -19,25 +22,25 @@ namespace BAF.Service.Core.Ioc
             switch (lifetime)
             {
                 case Lifetimes.Transient:
-                {
-                    lifestyle = Lifestyle.Transient;
-                    break;
-                }
+                    {
+                        lifestyle = Lifestyle.Transient;
+                        break;
+                    }
                 case Lifetimes.Singleton:
-                {
-                    lifestyle = Lifestyle.Singleton;
-                    break;
-                }
+                    {
+                        lifestyle = Lifestyle.Singleton;
+                        break;
+                    }
                 case Lifetimes.Scoped:
-                {
-                    lifestyle = Lifestyle.Scoped;
-                    break;
-                }
+                    {
+                        lifestyle = Lifestyle.Scoped;
+                        break;
+                    }
                 default:
-                {
-                    lifestyle = Lifestyle.Transient;
-                    break;
-                }
+                    {
+                        lifestyle = Lifestyle.Transient;
+                        break;
+                    }
             }
 
             _container.Register<TService, TImplementation>(lifestyle);

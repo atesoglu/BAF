@@ -14,8 +14,4 @@
         <Version>1.0.8</Version>
     </PropertyGroup>
 
-    <ItemGroup>
-      <Folder Include="Request" />
-    </ItemGroup>
-
 </Project>

@@ -12,5 +12,18 @@
         {
             paramCollection[KeyDefaultCollection] = connectionString;
         }
+
+        public static bool IsDevelopment(this ParamCollection paramCollection)
+        {
+            return paramCollection["Environment"] == "Development";
+        }
+        public static bool IsStaging(this ParamCollection paramCollection)
+        {
+            return paramCollection["Environment"] == "Staging";
+        }
+        public static bool IsProduction(this ParamCollection paramCollection)
+        {
+            return paramCollection["Environment"] == "Production";
+        }
     }
 }

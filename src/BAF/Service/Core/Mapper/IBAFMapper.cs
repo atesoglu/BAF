@@ -1,6 +1,8 @@
-﻿namespace BAF.Service.Core.Mapper
+﻿using BAF.Service.Base;
+
+namespace BAF.Service.Core.Mapper
 {
-    public interface IBAFMapper
+    public interface IBAFMapper : IServiceBase
     {
         void RegisterProfile<TProfile>() where TProfile : MapperProfile, new();
         void Configure();
