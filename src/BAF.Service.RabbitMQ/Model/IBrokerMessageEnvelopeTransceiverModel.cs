@@ -3,6 +3,6 @@
     public interface IBrokerMessageEnvelopeTransceiverModel
     {
         string Address { get; set; }
-        string TransactionIdentifier { get; set; }
+        string TransactionId { get; set; }
     }
 }
