@@ -6,9 +6,10 @@ namespace BAF.Service.RabbitMQ.Implementation
 {
     public interface IRabbitMQService : IServiceBase
     {
+        IRabbitMQDeclaration Declaration { get; }
+
         void Queue(string queueName, IBrokerMessageModel messageModel);
         void Exchange(string exchangeName, IBrokerMessageModel messageModel);
-
         void Subscribe(string queueName, Func<IBrokerMessageModel, bool> callback);
     }
 }
