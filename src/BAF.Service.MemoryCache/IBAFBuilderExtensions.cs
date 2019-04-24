@@ -11,5 +11,11 @@ namespace BAF.Service.MemoryCache
 
             return bafBuilder;
         }
+        public static IApp AddMemoryCache(this IApp app)
+        {
+            app.Ioc.Register<IBAFCache, MemoryCacheImpl>(Core.Ioc.Lifetimes.Singleton);
+
+            return app;
+        }
     }
 }
