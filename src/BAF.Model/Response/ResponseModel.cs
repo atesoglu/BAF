@@ -21,17 +21,21 @@ namespace BAF.Model.Response
 
         public IResponseModel<T> AddError(string error)
         {
-            return AddError(error, null);
+            return AddError(null, error);
         }
         public virtual IResponseModel<T> AddError(string header, string body)
         {
             Errors = Errors ?? new List<KeyValuePair<string, string>>();
+
+            Errors.Add(new KeyValuePair<string, string>(header, body));
 
             return this;
         }
         public virtual IResponseModel<T> AddParam(string key, string value)
         {
             Params = Params ?? new List<KeyValuePair<string, string>>();
+
+            Params.Add(new KeyValuePair<string, string>(key, value));
 
             return this;
         }
