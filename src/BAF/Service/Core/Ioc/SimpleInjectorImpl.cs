@@ -14,6 +14,7 @@ namespace BAF.Service.Core.Ioc
         {
             ServiceName = "SimpleInjector";
             _container = new Container();
+            _container.Options.AllowOverridingRegistrations = true;
         }
 
         public void Register<TService, TImplementation>(Lifetimes lifetime) where TService : class where TImplementation : class, TService
