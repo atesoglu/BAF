@@ -14,12 +14,21 @@ namespace BAF.Data.EFCore.Store
         where TObjectModel : ObjectModelBase, new()
         where TDomainModel : DomainModelBase, new()
     {
-        public int Count(Expression<Func<TDomainModel, bool>> predicate = null)
+        //public int Count(Expression<Func<TDomainModel, bool>> predicate = null)
+        //{
+        //    using (var context = new TDbContext())
+        //    {
+        //        var query = context.Set<TDomainModel>().AsQueryable().AsNoTracking();
+        //        query = predicate != null ? query.Where(predicate) : query;
+        //        return query.Count();
+        //    }
+        //}
+        public int Count(ICollection<Expression<Func<TDomainModel, bool>>> predicates = null)
         {
             using (var context = new TDbContext())
             {
                 var query = context.Set<TDomainModel>().AsQueryable().AsNoTracking();
-                query = predicate != null ? query.Where(predicate) : query;
+                query = predicates != null ? predicates.Aggregate(query, (current, predicate) => current != null ? current.Where(predicate) : current) : query;
                 return query.Count();
             }
         }

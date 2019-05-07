@@ -11,7 +11,7 @@ namespace BAF.Data.EFCore.Store
         where TObjectModel : ObjectModelBase, new()
         where TDomainModel : DomainModelBase, new()
     {
-        int Count(Expression<Func<TDomainModel, bool>> predicate = null);
+        int Count(ICollection<Expression<Func<TDomainModel, bool>>> predicates = null);
         ICollection<TObjectModel> Get(ICollection<Expression<Func<TDomainModel, bool>>> predicates = null, IList<Expression<Func<TDomainModel, object>>> includes = null, Func<IQueryable<TDomainModel>, IOrderedQueryable<TDomainModel>> orderBy = null, int? start = null, int? limit = null);
     }
 }
