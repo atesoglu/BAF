@@ -9,11 +9,11 @@
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="BAF" Version="1.0.9" />
-    <PackageReference Include="BAF.Business" Version="1.0.4" />
-    <PackageReference Include="BAF.Data" Version="1.0.4" />
+    <PackageReference Include="BAF" Version="1.0.10" />
+    <PackageReference Include="BAF.Business" Version="1.0.5" />
+    <PackageReference Include="BAF.Data" Version="1.0.5" />
     <PackageReference Include="BAF.Data.Dapper" Version="1.0.5" />
-    <PackageReference Include="BAF.Data.EFCore" Version="1.0.10" />
+    <PackageReference Include="BAF.Data.EFCore" Version="1.0.11" />
     <PackageReference Include="BAF.Exceptions" Version="1.0.5" />
     <PackageReference Include="BAF.Extensions" Version="1.0.6" />
     <PackageReference Include="BAF.Model" Version="1.0.9" />
