@@ -18,9 +18,9 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="BAF" Version="1.0.8" />
+    <PackageReference Include="BAF" Version="1.0.9" />
     <PackageReference Include="BAF.Data" Version="1.0.4" />
-    <PackageReference Include="BAF.Model" Version="1.0.8" />
+    <PackageReference Include="BAF.Model" Version="1.0.9" />
   </ItemGroup>
 
 </Project>

@@ -9,6 +9,8 @@ namespace BAF.Business.Module
         where TObjectModel : ObjectModelBase, new()
         where TIStore : class, IStoreBase<TObjectModel>
     {
+        protected TIStore Store => App.Context.Ioc.Resolve<TIStore>();
+
         public abstract IResponseModel<TObjectModel> Get(int id, IIdentityModel identityModel);
         public abstract IResponseModel<TObjectModel> Add(TObjectModel objectModel, IIdentityModel identityModel);
         public abstract IResponseModel<TObjectModel> Update(TObjectModel objectModel, IIdentityModel identityModel);
